@@ -17,9 +17,14 @@ const Hero = () => {
             <button className="px-6 py-2 bg-pink-600 rounded-full text-white font-medium hover:bg-pink-700 transition">
               Contact Me
             </button>
-            <button className="px-6 py-2 border border-white rounded-full text-white font-medium hover:bg-white hover:text-black transition">
+
+            {/* Anchor tag used instead of button to go directly to the PDF */}
+            <a
+              href="../src/assets/Radil CV.pdf" // make sure this path is correct
+              className="px-6 py-2 border border-white rounded-full text-white font-medium hover:bg-white hover:text-black transition inline-block"
+            >
               View Resume
-            </button>
+            </a>
           </div>
         </div>
 
