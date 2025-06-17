@@ -1,0 +1,97 @@
+/* About.css */
+
+.about-section {
+  padding: 5rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.about-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.about-content {
+  width: 100%;
+}
+
+.about-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.about-paragraph {
+  color: #d1d5db;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-tab-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-tab-btn.active {
+  background-color: white;
+  color: black;
+}
+
+.about-tab-content {
+  margin-top: 1rem;
+}
+
+.about-subheading {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.about-tech-list p {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.about-tech-list .highlight {
+  font-weight: 600;
+  color: white;
+}
+
+.about-education-list {
+  color: #d1d5db;
+  padding-left: 1rem;
+  list-style-type: disc;
+  margin-top: 0.5rem;
+}

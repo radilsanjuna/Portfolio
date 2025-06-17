@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Navbar = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="w-full fixed top-0 z-50 bg-black text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -12,9 +19,21 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-6 font-medium">
-          <li><a href="#About" className="hover:text-purple-400">About</a></li>
-          <li><a href="#projects" className="hover:text-purple-400">Projects</a></li>
-          <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
+          <li>
+            <button onClick={() => scrollToSection('About')} className="hover:text-purple-400">
+              About
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('projects')} className="hover:text-purple-400">
+              Projects
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-purple-400">
+              Contact
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
