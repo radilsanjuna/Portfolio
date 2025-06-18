@@ -1,0 +1,68 @@
+.contact-section {
+  padding: 80px 24px;
+  background-color: black;
+  color: white;
+}
+
+.contact-container {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.contact-description {
+  color: #9ca3af; /* Tailwind gray-400 */
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #1f2937; /* Tailwind gray-800 */
+  color: white;
+  border: none;
+}
+
+.contact-button {
+  background-color: #db2777; /* Tailwind pink-600 */
+  color: white;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #be185d; /* Tailwind pink-700 */
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: #ec4899; /* Tailwind pink-500 */
+}
+
+.contact-footer {
+  font-size: 0.875rem;
+  color: #6b7280; /* Tailwind gray-500 */
+}

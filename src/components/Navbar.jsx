@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-6 font-medium">
           <li>
-            <button onClick={() => scrollToSection('About')} className="hover:text-purple-400">
+            <button onClick={() => scrollToSection('about')} className="hover:text-purple-400">
               About
             </button>
           </li>

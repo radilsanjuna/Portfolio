@@ -1,61 +1,81 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from 'react-icons/fa';
+import React, { useState } from 'react';
+import '../css/Contact.css';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = `mailto:radilsanjuna2001@gmail.com?subject=Message from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+  };
+
   return (
-    <section id="contact" className="px-6 py-20 md:px-16 bg-black text-white">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Contact</h2>
-        <p className="text-gray-400 mb-10">
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <h2 className="contact-heading">Contact</h2>
+        <p className="contact-description">
           I'm currently open to freelance work or full-time opportunities. Feel free to reach out!
         </p>
 
-        <div className="flex justify-center gap-8 mb-6">
-          {/* Email */}
-          <a
-            href="mailto:radilsanjuna2001@gmail.com"
-            className="text-pink-500 hover:text-white transition text-2xl"
-            aria-label="Email"
-          >
-            <FaEnvelope />
-          </a>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="contact-input"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="contact-input"
+            onChange={handleChange}
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+            className="contact-textarea"
+            onChange={handleChange}
+          ></textarea>
+          <button type="submit" className="contact-button">
+            Send Email
+          </button>
+        </form>
 
-          {/* GitHub */}
+        <div className="contact-icons">
+          <a href="mailto:radilsanjuna2001@gmail.com" aria-label="Email"><FaEnvelope /></a>
+          <a href="https://github.com/radilsanjuna" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/radil-sanjuna/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+          <a href="https://web.facebook.com/radil.sanjuna" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
           <a
-            href="https://github.com/radilsanjuna"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-500 hover:text-white transition text-2xl"
-            aria-label="GitHub"
+              href="https://wa.me/94765368062?text=Hi%20I%20visited%20your%20portfolio%20and%20wanted%20to%20connect!"//%20 is for space amd the text is query parameter
+            target="_blank"// this one do is open a new browser tab
+            rel="noopener noreferrer"//if you use abouve target you should use this one always to stay secure
+            aria-label="WhatsApp"
           >
-            <FaGithub />
-          </a>
-
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/radil-sanjuna/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-500 hover:text-white transition text-2xl"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-
-          {/* Facebook */}
-          <a
-            href="https://web.facebook.com/radil.sanjuna"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-500 hover:text-white transition text-2xl"
-            aria-label="Facebook"
-          >
-            <FaFacebook />
+            <FaWhatsapp />
           </a>
         </div>
 
-        <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+        <p className="contact-footer">
+          &copy; {new Date().getFullYear()} Radil Sanjuna.
         </p>
       </div>
     </section>

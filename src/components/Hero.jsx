@@ -1,5 +1,9 @@
 import React from "react";
 
+// Import the assets correctly
+import profilePic from "../assets/pro-pic.jpg";
+import resumePDF from "../assets/Radil.pdf";
+
 const Hero = () => {
   return (
     <section className="pt-60 pb-16 px-6 md:px-16 bg-black text-white">
@@ -14,13 +18,19 @@ const Hero = () => {
           <p className="mt-4 text-lg text-gray-300">Software Engineer</p>
 
           <div className="mt-6 flex gap-4">
-            <button className="px-6 py-2 bg-pink-600 rounded-full text-white font-medium hover:bg-pink-700 transition">
-              Contact Me
-            </button>
-
-            {/* Anchor tag used instead of button to go directly to the PDF */}
+            {/* Scroll to contact section */}
             <a
-              href="../src/assets/Radil CV.pdf" // make sure this path is correct
+              href="#contact"
+              className="px-6 py-2 bg-pink-600 rounded-full text-white font-medium hover:bg-pink-700 transition"
+            >
+              Contact Me
+            </a>
+
+            {/* Link to resume PDF */}
+            <a
+              href={resumePDF}
+               target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2 border border-white rounded-full text-white font-medium hover:bg-white hover:text-black transition inline-block"
             >
               View Resume
@@ -28,10 +38,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side (Image aligned to right corner) */}
+        {/* Right Side (Profile Image) */}
         <div className="flex-1 flex justify-end">
           <img
-            src="../src/assets/pro-pic.jpg"
+            src={profilePic}
             alt="Avatar"
             className="w-64 h-64 rounded-full object-cover border-4 border-pink-500 shadow-lg"
           />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/About.css'; // Import your custom CSS
+import about from '../assets/about.png'; // Import the image
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
@@ -27,8 +28,9 @@ const About = () => {
           <>
             <h4 className="about-subheading">Education</h4>
             <ul className="about-education-list">
-              <li>Bachelor’s in Computer Science (2020–2024)</li>
-              <li>Online courses: Web Development, Android Development</li>
+              <li>Higher National Diploma in Computing and Software Engineering ICBT (Cardiff Metropolitan University)</li>
+              <li>Diploma in InformationTechnology Esoft Metro Campus</li>
+              <li>Diploma in Spoken English British Way English Academy</li>
             </ul>
           </>
         );
@@ -38,14 +40,15 @@ const About = () => {
   };
 
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-image">
-          <img
-            src="../src/assets/about.png"
-            alt="Workspace"
-            className="about-img"
-          />
+         <img
+  src={about}  // ✅ Use the imported variable
+  alt="Workspace"
+  className="about-img"
+/>
+
         </div>
 
         <div className="about-content">
